@@ -9,6 +9,15 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:srcCompat="@mipmap/ic_logo_foreground"
+        tools:srcCompat="@mipmap/ic_logo_background"
+        tools:visibility="visible" />
+
     <EditText
         android:id="@+id/etSignUsername"
         android:layout_width="match_parent"
