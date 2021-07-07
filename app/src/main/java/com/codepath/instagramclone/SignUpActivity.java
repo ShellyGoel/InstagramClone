@@ -20,6 +20,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private EditText etSignUsername;
     private EditText etSignPassword;
+    private EditText etSignEmail;
     private Button btnSignLogin;
 
     @Override
@@ -29,22 +30,26 @@ public class SignUpActivity extends AppCompatActivity {
         etSignUsername = findViewById(R.id.etSignUsername);
         etSignPassword = findViewById(R.id.etSignPassword);
         btnSignLogin = findViewById(R.id.btnSignLogin);
+        etSignEmail = findViewById(R.id.etSignEmail);
+
 
         btnSignLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = etSignUsername.getText().toString();
                 String password = etSignPassword.getText().toString();
-                createUser(username,password);
+                String email = etSignEmail.getText().toString();
+                createUser(username,password, email);
             }
         });
 
     }
 
-    public void createUser(String username, String password) {
+    public void createUser(String username, String password, String email) {
         ParseUser user = new ParseUser();
         user.setUsername(username);
         user.setPassword(password);
+        user.setEmail(email);
         //user.setEmail("email@example.com");
 
         // Other fields can be set just like any other ParseObject,
@@ -54,7 +59,7 @@ public class SignUpActivity extends AppCompatActivity {
         user.signUpInBackground(e -> {
             if (e == null) {
                 // Hooray! Let them use the app now.
-                Toast.makeText(this, "successful sign up! logging in...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Successful sign up! logging in...", Toast.LENGTH_LONG).show();
                 goMainActivity();
             } else {
                 // Sign up didn't succeed. Look at the ParseException

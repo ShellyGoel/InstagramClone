@@ -26,6 +26,16 @@
         android:hint="password"
         android:inputType="textPassword" />
 
+    <EditText
+        android:id="@+id/etSignEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="email"
+        android:inputType="textEmailAddress" />
+
+
     <Button
         android:id="@+id/btnSignLogin"
         android:layout_width="match_parent"
