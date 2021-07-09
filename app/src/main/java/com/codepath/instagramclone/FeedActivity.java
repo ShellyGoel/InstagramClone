@@ -3,6 +3,7 @@ package com.codepath.instagramclone;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,10 @@ public class FeedActivity extends AppCompatActivity {
     private RecyclerView rvPosts;
     protected PostsAdapter adapter;
     protected List<Post> allPosts;
+
+    private SwipeRefreshLayout swipeContainer;
+
+
     public static final String TAG = "FeedActivity";
 
     @Override
@@ -38,7 +43,38 @@ public class FeedActivity extends AppCompatActivity {
             rvPosts.setLayoutManager(new LinearLayoutManager(this));
             // query posts from Parstagram
             queryPosts();
-        }
+
+        // Lookup the swipe container view
+        swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
+        // Setup refresh listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Your code to refresh the list here.
+                // Make sure you call swipeContainer.setRefreshing(false)
+                // once the network request has completed successfully.
+                fetchTimelineAsync(0);
+            }
+        });
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+    }
+
+    public void fetchTimelineAsync(int page) {
+        // Send the network request to fetch the updated data
+        // `client` here is an instance of Android Async HTTP
+        // getHomeTimeline is an example endpoint.
+
+        adapter.clear();
+        queryPosts();
+        // Now we call setRefreshing(false) to signal refresh has finished
+        swipeContainer.setRefreshing(false);
+
+
+}
 
 
 

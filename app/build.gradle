@@ -44,5 +44,6 @@ dependencies {
 
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1' // for logging API calls to LogCat
     implementation "androidx.recyclerview:recyclerview:1.1.0"
-
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
 }
+
