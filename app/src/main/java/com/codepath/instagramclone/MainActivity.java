@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnCaptureImage;
     private ImageView ivPostImage;
     private Button btnSubmit;
+    private Button btnFeed;
     public static final String TAG = "MainActivity";
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
     private File photoFile;
@@ -50,12 +51,20 @@ public class MainActivity extends AppCompatActivity {
         btnCaptureImage = findViewById(R.id.btnCaptureImage);
         ivPostImage = findViewById(R.id.ivPostImage);
         btnSubmit = findViewById(R.id.btnSubmit);
+        btnFeed = findViewById(R.id.btnFeed);
 
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onLaunchCamera(v);
+            }
+        });
+
+        btnFeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goFeedActivity();
             }
         });
 
@@ -85,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
                 goLoginActivity();
             }
         });
+
+
     }
 
     public void onLaunchCamera(View view) {
@@ -170,6 +181,13 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
         //TODO:finish main activity once we have navigated to the next activity
+        finish();
+
+    }
+
+    private void goFeedActivity(){
+        Intent i = new Intent(this, FeedActivity.class);
+        startActivity(i);
         finish();
 
     }
