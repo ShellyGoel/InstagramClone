@@ -87,8 +87,6 @@ public class LoginActivity extends AppCompatActivity {
     private void goSignUpActivity(){
         Intent i = new Intent(this, SignUpActivity.class);
         startActivity(i);
-        //finish login activity once we have navigated to the next activity
-        //finish();
 
     }
 }

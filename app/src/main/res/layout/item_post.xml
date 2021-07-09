@@ -27,4 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         tools:text="trying to look hipster" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="137dp"
+        tools:text="Date created" />
 </LinearLayout>

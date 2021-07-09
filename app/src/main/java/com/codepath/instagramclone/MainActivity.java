@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
     private void goFeedActivity(){
         Intent i = new Intent(this, FeedActivity.class);
         startActivity(i);
-        finish();
+        //finish();
 
     }
 
