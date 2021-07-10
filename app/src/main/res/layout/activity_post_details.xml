@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Created at:" />
+            android:text="Timestamp:" />
 
         <TextView
             android:id="@+id/tvDate"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Description: " />
+            android:text="Caption: " />
 
         <TextView
             android:id="@+id/tvDescription"

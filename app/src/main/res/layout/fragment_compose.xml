@@ -33,15 +33,10 @@
         android:text="Submit" />
 
     <Button
-        android:id="@+id/btnFeed"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Go to Feed" />
-
-    <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="210dp"
         android:backgroundTint="#2962FF"
         android:text="Logout"
         tools:layout_editor_absoluteX="310dp"

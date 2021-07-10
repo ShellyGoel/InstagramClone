@@ -73,7 +73,7 @@ public class ComposeFragment extends Fragment {
         btnCaptureImage = view.findViewById(R.id.btnCaptureImage);
         ivPostImage = view.findViewById(R.id.ivPostImage);
         btnSubmit = view.findViewById(R.id.btnSubmit);
-        btnFeed = view.findViewById(R.id.btnFeed);
+        //btnFeed = view.findViewById(R.id.btnFeed);
 
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
@@ -83,12 +83,12 @@ public class ComposeFragment extends Fragment {
             }
         });
 
-        btnFeed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goFeedActivity();
-            }
-        });
+//        btnFeed.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                goFeedActivity();
+//            }
+//        });
 
         //queryPosts();
         btnSubmit.setOnClickListener(new View.OnClickListener() {
