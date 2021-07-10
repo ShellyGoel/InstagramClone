@@ -71,7 +71,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                         Post post = posts.get(position);
                         Date createdAt = post.getCreatedAt();
                         String timeAgo = Post.calculateTimeAgo(createdAt);
-                        tvDate.setText(timeAgo);
+                       // tvDate.setText(timeAgo);
 
                         // create intent for the new activity
                         Intent intent = new Intent(context, PostDetailsActivity.class);
@@ -94,6 +94,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             if (image != null) {
                 Glide.with(context).load(image.getUrl()).into(ivImage);
             }
+
+            Date createdAt = post.getCreatedAt();
+            String timeAgo = Post.calculateTimeAgo(createdAt);
+            tvDate.setText(timeAgo);
 
         }
 
